@@ -16,6 +16,9 @@ class PostsController < ApplicationController
     post.destroy
   end
 
+  def edit
+    @post = Post.find(params[:id])
+
   private
   def post_params
     params.require(:post).permit(:name, :weight, :text)
