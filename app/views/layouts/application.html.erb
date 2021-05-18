@@ -10,6 +10,19 @@
   </head>
 
   <body>
+  <header class="header">
+      <div class="header__bar row">
+        <h1 class="grid-6"><a href="/">BodyShare</a></h1>
+        <div class="user_nav grid-6">
+          <a class="post" href="/posts/new">記録する</a>
+        </div>
+      </div>
+    </header>
     <%= yield %>
+     <footer>
+      <p>
+        Copyright BodyShare 2021.
+      </p>
+    </footer>
   </body>
 </html>
