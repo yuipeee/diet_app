@@ -1,5 +1,6 @@
 <div class="contents row">
     <div class="content_post" style="background-image: url(<%# post.image %>);">
+    <% if user_signed_in? && current_user.id == @post.user_id %>
      <div class="more">
         <ul class="more_list">
           <li>
@@ -10,8 +11,12 @@
           </li>
         </ul>
       </div>
+      <% end %>
       <p><%= @post.text %></p>
-      <span class="name"><%= @post.name %>
-      </span>
+      <span class="name">
+      <a href="/users/<%= @post.user.id %>">
+        <span>投稿者</span><%= @post.user.name %>
+      </a>
+    </span>
     </div>
 </div>
