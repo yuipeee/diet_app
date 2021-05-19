@@ -1,0 +1,10 @@
+<div class="contents row">
+  <p><%= @name %>さんの記録一覧</p>
+  <% @posts.each do |post| %>
+    <div class="content_post" style="background-image: url(<%# tweet.image %>);">
+      <p><%= post.weight %></p>
+      <p><%= post.text %></p>
+      <span class="name"><%= post.name %></span>
+    </div>
+  <% end %>
+</div>
