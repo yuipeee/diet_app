@@ -1,0 +1,15 @@
+<%= form_with(model: post, local: true) do |form| %>
+    <div class="new_name">
+    投稿者
+    </div>
+      <%# form.text_field :image, placeholder: "Image Url" %>
+    <div class="new_weight">
+    今日の体重
+    </div>
+      <%= form.text_field :weight, placeholder:"例）50" %>kg
+    <div class="new_text">
+    つぶやき
+    </div>
+      <%= form.text_area :text, placeholder: "例）今日からダイエット頑張るぞ", rows: "5" %>
+      <%= form.submit "SHARE" %>
+    <% end %>
