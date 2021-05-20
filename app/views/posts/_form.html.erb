@@ -3,6 +3,9 @@
     投稿者
     </div>
       <%# form.text_field :image, placeholder: "Image Url" %>
+    <div class="new_image">
+      <%= image_tag post.image.variant(resize: '500x500'), class: 'post-image' if post.image.attached? %>
+    </div>
     <div class="new_weight">
     今日の体重
     </div>
