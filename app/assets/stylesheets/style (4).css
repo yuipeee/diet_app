@@ -867,6 +867,7 @@ div.contents.row div.content_post {
   background-size: cover;
   background-position: center center;
   border-radius: 3px;
+  text-align: center;
 }
 
 div.contents.row div.content_post .more {
