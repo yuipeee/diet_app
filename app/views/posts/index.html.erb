@@ -5,6 +5,8 @@
 
 <div class="contents row">
   <% @posts.each do |post| %>
+  <div id="post_<%= post.id %>">
      <%= render partial: "post", locals: { post: post  } %>
+  </div>
   <% end %>
 </div>
