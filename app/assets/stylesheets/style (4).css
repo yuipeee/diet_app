@@ -638,7 +638,7 @@ ul li {
 body,
 html {
   height: 100%;
-  background-color: whitesmoke;
+  background-color: #66CCCC;
 }
 
 body {
@@ -737,8 +737,8 @@ header.header div.header__bar.row div.grid-6 a.post:hover {
 
 header.header {
   padding: 10px;
-  border-bottom: 1px solid #8FBC8F;
-  background-color: #8FBC8F;
+  border-bottom: 1px solid #66CCCC;
+  background-color: #66CCCC;
   position: fixed;
   top: 0;
   left: 0;
@@ -788,6 +788,7 @@ header.header .user_nav span {
   font-size: 1em;
   cursor: pointer;
   position: relative;
+  color: #FFFFE0;
 }
 
 header.header .user_nav span:after {
@@ -806,20 +807,24 @@ header.header .user_nav ul {
   position: absolute;
   top: 46px;
   right: 0;
-  border-left: 1px solid #d8d8d8;
-  border-right: 1px solid #d8d8d8;
+  border-left: 1px solid #000066 ;
+  border-right: 1px solid #000066;
   box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 header.header .user_nav ul li {
-  background-color: #f0f0f0;
+  background-color: #000066;
+}
+
+header.header .user_nav ul li a:hover{
+  background-color: #505088;
 }
 
 header.header .user_nav ul li a {
   display: block;
   padding: 10px 20px;
   text-align: left;
-  border-bottom: 1px solid #d8d8d8;
+  border-bottom: 1px solid #000066;
 }
 
 .form {
@@ -868,6 +873,7 @@ div.contents.row div.content_post {
   background-position: center center;
   border-radius: 3px;
   text-align: center;
+  background-color: #FFFFE0;
 }
 
 div.contents.row div.content_post .more {
@@ -891,15 +897,15 @@ div.contents.row div.content_post .more ul.more_list {
   width: 80px;
   right: 0;
   font-size: 12px;
-  background-color: #fff;
-  border: 1px solid #ddd;
+  background-color: #000066;
+  border: 1px solid #000066;
   display: none;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
   border-radius: 3px;
 }
 
 div.contents.row div.content_post .more ul.more_list li {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #000066;
 }
 
 div.contents.row div.content_post .more ul.more_list li:last-child {
@@ -912,7 +918,7 @@ div.contents.row div.content_post .more ul.more_list li a {
 }
 
 div.contents.row div.content_post .more ul.more_list li a:hover {
-  background-color: #8FBC8F;
+  background-color: #505088;
   color: #fff;
 }
 
@@ -938,12 +944,14 @@ div.contents.row div.content_post span.name {
 
 div.contents.row div.content_post span.name a {
   display: block;
-  color: #aaa;
+  color: #FFFFE0;
+  text-decoration: none;
 }
 
 div.contents.row div.content_post span.name a:hover {
   text-decoration: underline;
-  color: #aaa;
+  color: #f8f876;
+  text-decoration: none;
 }
 
 div.contents.row div.content_post span.name span {
@@ -955,7 +963,7 @@ div.contents.row .success {
   margin: 20px 0;
   padding: 30px;
   box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
-  background-color: #a1d1a1;
+  background-color: #66CCCC;
   box-sizing: border-box;
   text-align: center;
 }
@@ -976,7 +984,7 @@ form textarea {
 
 
 form input[type="submit"] {
-  background-color: #8FBC8F;
+  background-color: #000066;
   border-radius: 20px;
   color: #fff;
   border: 0;
@@ -984,14 +992,14 @@ form input[type="submit"] {
 }
 
 form input[type="submit"]:hover {
-  background-color: #b6e5b6;
+  background-color: #3f3f7e;
 }
 
 .container {
   margin: 20px 0;
   padding: 30px;
   box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
-  background-color: white;
+  background-color: #66CCCC;
   box-sizing: border-box;
 }
 
@@ -1000,7 +1008,7 @@ form input[type="submit"]:hover {
   text-align: center;
   font-weight: normal;
   font-size: 20px;
-  color: #666;
+  color: #FFFFE0;
 }
 
 .comments {
@@ -1009,7 +1017,7 @@ form input[type="submit"]:hover {
 }
 
 .comments a {
-  color: #8FBC8F;
+  color: #FFFFE0;
 }
 
 .comments a:hover {
@@ -1019,7 +1027,7 @@ form input[type="submit"]:hover {
 footer {
   margin: 30px auto;
   padding: 10px;
-  color: #2E8B57;
+  color: #000066;
 }
 
 footer p {
@@ -1045,7 +1053,7 @@ footer p {
 }
 
 .like-link:hover {
-  background-color: #fff!important;
+  background-color: #FFFFE0!important;
 }
 
 .like-btn {
@@ -1056,4 +1064,8 @@ footer p {
 .unlike-btn {
   font-size: 15px;
   color: #e54747;
+}
+
+.count {
+  color: #808080;
 }
