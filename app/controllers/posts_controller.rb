@@ -11,7 +11,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    Post.create(post_params)
+    poset = Post.create(post_params)
   end
 
   def destroy

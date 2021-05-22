@@ -1,4 +1,13 @@
 <div class="contents row">
+
+  <div class="name-1">
+    <a href="/users/<%= @post.user.id %>">
+    <span>投稿者 : </span><%= @post.user.name %>
+    </a>
+  </div>
+
+
+
     <%= image_tag @post.image.variant(resize: '400x400'), class: 'post-image' if @post.image.attached? %>
     <% if user_signed_in? && current_user.id == @post.user_id %>
      <div class="more">
@@ -12,13 +21,16 @@
         </ul>
       </div>
       <% end %>
-      <p><%= @post.text %></p>
-      <span class="name">
-      <a href="/users/<%= @post.user.id %>">
-        <span>投稿者 : </span><%= @post.user.name %>
-      </a>
-    </span>
-    </div>
+      <div class="weight_text">
+        <div class="weight">today's weight </div> 
+          <div class="weight-what"> <%= @post.weight %>kg </div>
+          <br>
+         <div class="text">text</div> 
+          <div class="text-what"> 
+            <div class="text-what-text"> <%= @post.text %> </div>
+          </div>
+        </div>
+      </div>
     <div class="container">
     <% if user_signed_in? %>
       <%= form_with(model: [@post, @comment], local: true) do |form| %>
