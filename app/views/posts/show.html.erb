@@ -18,9 +18,10 @@
           <li>
             <%= link_to '削除', post_path(@post.id), method: :delete %>
           </li>
+           <% end %>
         </ul>
       </div>
-      <% end %>
+   
       <div class="weight_text">
         <div class="weight">today's weight </div> 
           <div class="weight-what"> <%= @post.weight %>kg </div>
