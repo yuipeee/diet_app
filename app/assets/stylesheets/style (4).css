@@ -988,7 +988,6 @@ div.text-what:before {
   z-index: 0;
 }
 
-
 div.contents.row div.content_post .more {
   position: absolute;
   cursor: pointer;
@@ -1136,6 +1135,7 @@ form input[type="submit"]:hover {
 
 .comments a:hover {
   text-decoration: underline;
+  color: #f8f876;
 }
 
 footer {
