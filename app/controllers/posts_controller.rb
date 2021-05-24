@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:edit, :show]
   before_action :move_to_index, except: [:index, :show, :search]
+  before_action :authenticate_user!
 
   def index
     @posts = Post.includes(:user).order("created_at DESC")
@@ -11,7 +12,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    Post.create(post_params)
+    poset = Post.create(post_params)
   end
 
   def destroy

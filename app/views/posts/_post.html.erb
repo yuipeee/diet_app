@@ -1,8 +1,28 @@
-<div class="content_post" style="background-image: url(<%# post.image %>);">
+<div class="content_post">
 
 <%# 追記 %>
  <%= image_tag post.image.variant(resize: '300x300'), class: 'post-image' if post.image.attached? %>
 <%# 追記 %>
+
+      <%# いいね追記 %>
+      <div class = "like">
+        <% if current_user.liked_by?(post.id) %>
+          <td>
+          <%= link_to destroy_like_path(post), class: "like-link", method: :DELETE, remote: true do %>
+            <i class="fa fa-heart unlike-btn"></i>
+            <% end %>
+            <span class = 'count'><%= post.likes.count %></span>
+          </td>
+        <% else %>
+          <td>
+          <%= link_to create_like_path(post), class: "like-link", method: :POST, remote: true do %>
+            <i class="fa fa-heart like-btn"></i>
+          <% end %>
+          <span class ='count'><%= post.likes.count %></span>
+          </td>
+        <% end %>
+      </div>
+      <%# いいね追記 %>
 
      <div class="more">
         <ul class="more_list">
@@ -19,27 +39,19 @@
           <% end %>
         </ul>
       </div>
-      <p><%= post.text %></p>
+      <div class="weight_text">
+         <div class="weight">today's weight </div> 
+          <div class="weight-what"> <%= post.weight %>kg </div>
+          <br>
+         <div class="text">text</div> 
+          <div class="text-what"> 
+            <div class="text-what-text"> <%= post.text %> </div>
+          </div>
+      </div>
       <span class="name">
          <a href="/users/<%= post.user.id %>">
-          <span>投稿者</span><%= post.user.name %>
+          @<%= post.user.name%>
         </a>
       </span>
-      <%# いいね追記 %>
-        <% if current_user.liked_by?(post.id) %>
-          <td>
-          <%= link_to destroy_like_path(post), class: "like-link", method: :DELETE, remote: true do %>
-            <i class="fa fa-heart unlike-btn"></i>
-            <% end %>
-            <%= post.likes.count %>
-          </td>
-        <% else %>
-          <td>
-          <%= link_to create_like_path(post), class: "like-link", method: :POST, remote: true do %>
-            <i class="fa fa-heart like-btn"></i>
-          <% end %>
-          <%= post.likes.count %>
-          </td>
-        <% end %>
-      <%# いいね追記 %>
+
     </div>

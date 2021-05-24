@@ -1,41 +1,53 @@
 <div class="contents row">
+  <div class="content_post">
+
     <%= image_tag @post.image.variant(resize: '400x400'), class: 'post-image' if @post.image.attached? %>
-    <% if user_signed_in? && current_user.id == @post.user_id %>
-     <div class="more">
-        <ul class="more_list">
-          <li>
-            <%= link_to '編集', edit_post_path(@post.id), method: :get %>
-          </li>
-          <li>
-            <%= link_to '削除', post_path(@post.id), method: :delete %>
-          </li>
-        </ul>
+    <div class="more">
+      <ul class="more_list">
+        <li>
+          <% if user_signed_in? && current_user.id == @post.user_id %>
+          <%= link_to '編集', edit_post_path(@post.id), method: :get %>
+        </li>
+        <li>
+          <%= link_to '削除', post_path(@post.id), method: :delete %>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+
+    <div class="weight_text">
+      <div class="weight">today's weight </div> 
+      <div class="weight-what"> <%= @post.weight %>kg </div>
+      <br> 
+      <div class="text">text</div> 
+      <div class="text-what"> 
+        <div class="text-what-text"> <%= @post.text %> </div>
       </div>
-      <% end %>
-      <p><%= @post.text %></p>
-      <span class="name">
+    </div>
+    <span class="name">
       <a href="/users/<%= @post.user.id %>">
-        <span>投稿者</span><%= @post.user.name %>
+      @<%= @post.user.name%>
       </a>
     </span>
-    </div>
+  </div>  
+
     <div class="container">
-    <% if user_signed_in? %>
-      <%= form_with(model: [@post, @comment], local: true) do |form| %>
-        <%= form.text_area :comment_text, placeholder: "コメントする", rows: "2" %>
-        <%= form.submit "SEND" %>
+      <% if user_signed_in? %>
+        <%= form_with(model: [@post, @comment], local: true) do |form| %>
+          <%= form.text_area :comment_text, placeholder: "コメントする", rows: "2" %>
+          <%= form.submit "SEND" %>
+        <% end %>
+      <% else %>
+        <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
       <% end %>
-    <% else %>
-      <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
-    <% end %>
-    <div class="comments">
-      <h4>＜コメント一覧＞</h4>
-      <% @comments.each do |comment| %>
+      <div class="comments">
+        <h4>＜コメント一覧＞</h4>
+        <% @comments.each do |comment| %>
         <p>
           <strong><%= link_to comment.user.name, "/users/#{comment.user_id}" %>：</strong>
           <%= comment.comment_text %>
         </p>
-      <% end %>
+        <% end %>
+      </div>
     </div>
-  </div>
 </div>
