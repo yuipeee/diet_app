@@ -1194,3 +1194,9 @@ img.post-image {
   height: 180px;
   object-fit: cover; 
 }
+
+div.data {
+  background-color: #FFFFE0;
+  width: 700px;
+  height: 350px;
+}

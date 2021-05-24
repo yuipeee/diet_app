@@ -1,6 +1,21 @@
 <div class="contents row">
-  <p><%= @name %>さんの記録一覧</p>
+  <h1><%= @name %>さんの記録</h1>
+    <h2> ■体重推移</h2>
+
+   <div class ="data">
+   <%= line_chart @posts.group_by_day(:created_at).sum(:weight),
+   height: "350px",
+   width: "700px",
+   min: 40,
+   max: 55,
+   colors: ["#FF1A6F"]
+   %>
+   </div>
+   <br>
+   <br>
+    <h2>■投稿内容 </h2>
   <% @posts.each do |post| %>
    <%= render partial: "posts/post", locals: { post: post } %>
-  <% end %>
+   <% end %>
+
 </div>
