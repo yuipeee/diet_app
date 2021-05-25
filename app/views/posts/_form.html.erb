@@ -1,4 +1,5 @@
 <%= form_with(model: post, local: true) do |form| %>
+<%= render 'layouts/error_messages', model: @post %>
       <%# form.text_field :image, placeholder: "Image Url" %>
 
 <%# 追記 %>
@@ -17,6 +18,6 @@
     <div class="new_text">
     つぶやき
     </div>
-      <%= form.text_area :text, placeholder: "例）今日からダイエット頑張るぞ", rows: "5" %>
+      <%= form.text_area :text, placeholder: "例）今日からダイエット頑張るぞ", rows: "2" %>
       <%= form.submit "SHARE" %>
     <% end %>

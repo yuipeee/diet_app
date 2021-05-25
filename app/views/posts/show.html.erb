@@ -1,7 +1,7 @@
 <div class="contents row">
   <div class="content_post">
 
-    <%= image_tag @post.image.variant(resize: '400x400'), class: 'post-image' if @post.image.attached? %>
+    <%= image_tag @post.image, class: 'post-image' if @post.image.attached? %>
     <div class="more">
       <ul class="more_list">
         <li>
@@ -34,7 +34,8 @@
     <div class="container">
       <% if user_signed_in? %>
         <%= form_with(model: [@post, @comment], local: true) do |form| %>
-          <%= form.text_area :comment_text, placeholder: "コメントする", rows: "2" %>
+           <%= render 'layouts/error_messages', model: @post %>
+          <%= form.text_area :comment_text, placeholder: "コメントする  ※70文字以内", rows: "2" %>
           <%= form.submit "SEND" %>
         <% end %>
       <% else %>
