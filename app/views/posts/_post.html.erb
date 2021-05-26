@@ -4,26 +4,6 @@
  <%= image_tag post.image.variant(resize: '300x300'), class: 'post-image' if post.image.attached? %>
 <%# 追記 %>
 
-      <%# いいね追記 %>
-      <div class = "like">
-        <% if current_user.liked_by?(post.id) %>
-          <td>
-          <%= link_to destroy_like_path(post), class: "like-link", method: :DELETE, remote: true do %>
-            <i class="fa fa-heart unlike-btn"></i>
-            <% end %>
-            <span class = 'count'><%= post.likes.count %></span>
-          </td>
-        <% else %>
-          <td>
-          <%= link_to create_like_path(post), class: "like-link", method: :POST, remote: true do %>
-            <i class="fa fa-heart like-btn"></i>
-          <% end %>
-          <span class ='count'><%= post.likes.count %></span>
-          </td>
-        <% end %>
-      </div>
-      <%# いいね追記 %>
-
      <div class="more">
         <ul class="more_list">
           <li>
@@ -53,5 +33,25 @@
           @<%= post.user.name%>
         </a>
       </span>
+
+            <%# いいね追記 %>
+      <span class = "like">
+        <% if current_user.liked_by?(post.id) %>
+          <td>
+          <%= link_to destroy_like_path(post), class: "like-link", method: :DELETE, remote: true do %>
+            <i class="fa fa-heart unlike-btn"></i>
+            <% end %>
+            <span class = 'count'><%= post.likes.count %></span>
+          </td>
+        <% else %>
+          <td>
+          <%= link_to create_like_path(post), class: "like-link", method: :POST, remote: true do %>
+            <i class="fa fa-heart like-btn"></i>
+          <% end %>
+          <span class ='count'><%= post.likes.count %></span>
+          </td>
+        <% end %>
+      </span>
+      <%# いいね追記 %>
 
     </div>
