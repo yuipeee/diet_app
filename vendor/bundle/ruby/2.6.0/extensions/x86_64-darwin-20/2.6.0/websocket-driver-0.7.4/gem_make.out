@@ -1,0 +1,15 @@
+current directory: /Users/dairakuyui/projects/diet_app/vendor/bundle/ruby/2.6.0/gems/websocket-driver-0.7.4/ext/websocket-driver
+/Users/dairakuyui/.rbenv/versions/2.6.6/bin/ruby -I /Users/dairakuyui/.rbenv/versions/2.6.6/lib/ruby/2.6.0 -r ./siteconf20210526-32904-1syq03d.rb extconf.rb
+creating Makefile
+
+current directory: /Users/dairakuyui/projects/diet_app/vendor/bundle/ruby/2.6.0/gems/websocket-driver-0.7.4/ext/websocket-driver
+make "DESTDIR=" clean
+
+current directory: /Users/dairakuyui/projects/diet_app/vendor/bundle/ruby/2.6.0/gems/websocket-driver-0.7.4/ext/websocket-driver
+make "DESTDIR="
+compiling websocket_mask.c
+linking shared-object websocket_mask.bundle
+
+current directory: /Users/dairakuyui/projects/diet_app/vendor/bundle/ruby/2.6.0/gems/websocket-driver-0.7.4/ext/websocket-driver
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 websocket_mask.bundle ./.gem.20210526-32904-43ejy5
