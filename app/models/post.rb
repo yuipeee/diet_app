@@ -1,7 +1,7 @@
 class Post < ApplicationRecord
   with_options presence: true do
-  validates :text
-  validates :weight, numericality: { less_than_or_equal_to: 70 },format: { with:/\A[0-9]+\Z/ }
+  validates :text,   length: { maximum: 70 }
+  validates :weight, numericality: { less_than_or_equal_to: 55 }, format: { with:/\A[0-9]+\Z/ }
   end
   
   belongs_to :user
